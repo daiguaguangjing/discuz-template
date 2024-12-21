@@ -1,0 +1,120 @@
+<!--{template common/header}-->
+<!--[name]sweb[/name]-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+<div id="pt" class="bm cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+		<a href="$_G[setting][navs][1][filename]">{lang portal}</a> <em>&rsaquo;</em>
+		<!--{loop $cat[ups] $value}--> <a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a><em>&rsaquo;</em><!--{/loop}-->
+		$cat[catname]
+	</div>
+</div>
+
+<!--{ad/text/wp a_t}-->
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="ct" class="ct2 wp cl">
+
+	<div class="mn">
+		<!--{ad/articlelist/mbm hm/1}--><!--{ad/articlelist/mbm hm/2}-->
+		<!--[diy=listcontenttop]--><div id="listcontenttop" class="area"></div><!--[/diy]-->
+		<div class="bg0 zaobm mb15">
+			<div class="bm_h cl">
+				<!--{if $_G[setting][rssstatus] && !$_GET['archiveid']}--><a href="portal.php?mod=rss&catid=$cat[catid]" class="y xi2 rss" target="_blank" title="RSS">{lang rss_subscribe_this}</a><!--{/if}-->
+				<!--{if ($_G['group']['allowpostarticle'] || $_G['group']['allowmanagearticle'] || $categoryperm[$catid]['allowmanage'] || $categoryperm[$catid]['allowpublish']) && empty($cat['disallowpublish'])}-->
+				<a href="portal.php?mod=portalcp&ac=article&catid=$cat[catid]" class="y xi2 addnew">{lang article_publish}</a>
+				<!--{/if}-->
+				<h1 class="xs2">$cat[catname]</h1>
+			</div>
+			<!--{if $cat[subs]}-->
+			<div class="bm_c bbda">
+				{lang sub_category}:&nbsp;&nbsp;
+				<!--{eval $i = 1;}-->
+				<!--{loop $cat[subs] $value}-->
+				<!--{if $i != 1}--><span class="pipe">|</span><!--{/if}--><a href="{$portalcategory[$value['catid']]['caturl']}" class="xi2">$value[catname]</a><!--{eval $i--;}-->
+				<!--{/loop}-->
+			</div>
+			<!--{/if}-->
+			<div class="bm_c zaoxld">
+			<!--{loop $list['list'] $value}-->
+				<!--{eval $highlight = article_title_style($value);}-->
+				<!--{eval $article_url = fetch_article_url($value);}-->
+				<div class="bbda mb10 pb10 cl">
+					<!--{if $value[pic]}-->
+					<div class="atc"><a href="$article_url" target="_blank"><img src="$value[pic]" alt="$value[title]" class="tn" /></a></div>
+					<!--{else}-->
+					<div class="atc"><a href="$article_url" target="_blank"><img src="./template/zaoer_sweb/zaoer/portallistnone.jpg" alt="$value[title]" class="tn" /></a></div>
+					<!--{/if}-->
+					<div class="mb10"><a href="$article_url" target="_blank" class="xi2 fic20" $highlight><h1>$value[title]</h1></a> <!--{if $value[status] == 1}-->({lang moderate_need})<!--{/if}--></div>
+					<p class="fic15 xg2 mb10">$value[summary]</p>
+					<p class="xg2">
+						<span class="xg2">$value[dateline]</span>
+						<!--{if $value[catname] && $cat[subs]}-->&nbsp;&nbsp;<label><a href="{$portalcategory[$value['catid']]['caturl']}" class="xi2">$value[catname]</a></label><!--{/if}-->
+						<!--{if $_G['group']['allowmanagearticle'] || ($_G['group']['allowpostarticle'] && $value['uid'] == $_G['uid'] && (empty($_G['group']['allowpostarticlemod']) || $_G['group']['allowpostarticlemod'] && $value['status'] == 1)) || $categoryperm[$value['catid']]['allowmanage']}-->
+						<span class="xg2">
+							&nbsp;&nbsp;
+							<label><a href="portal.php?mod=portalcp&ac=article&op=edit&aid=$value[aid]">{lang edit}</a></label>
+							&nbsp;&nbsp;
+							<label><a href="portal.php?mod=portalcp&ac=article&op=delete&aid=$value[aid]" id="article_delete_$value[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a></label>
+						</span>
+						<!--{/if}-->
+					</p>
+				</div>
+			<!--{/loop}-->
+			</div>
+			<!--[diy=listloopbottom]--><div id="listloopbottom" class="area"></div><!--[/diy]-->
+		</div>
+		<!--{ad/articlelist/mbm hm/3}--><!--{ad/articlelist/mbm hm/4}-->
+		<!--{if $list['multi']}--><div class="pgs cl">{$list['multi']}</div><!--{/if}-->
+		<!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]-->
+	</div>
+	
+	<div class="sd pph">
+		<div class="drag">
+			<!--[diy=diyrighttop]--><div id="diyrighttop" class="area"></div><!--[/diy]-->
+		</div>
+		<!--{if $cat[others]}-->
+		<div class="bg0 zaobm mb15">
+			<div class="bm_h cl"><h2>{lang category_related}</h2></div>
+			<div class="bm_c">
+				<ul class="xl xl2 cl">
+					<!--{loop $cat[others] $value}-->
+					<li><a href="{$portalcategory[$value['catid']]['caturl']}" class="fic15">$value[catname]</a></li>
+					<!--{/loop}-->
+				</ul>
+			</div>
+		</div>
+		<!--{/if}-->
+		<!--{if $cat[subs]}-->
+		<div class="bg0 zaobm mb15">
+			<div class="bm_h cl"><h2>{lang sub_category}</h2></div>
+			<div class="bm_c">
+				<ul class="xl xl2 cl">
+					<!--{eval $i = 1;}-->
+					<!--{loop $cat[subs] $value}-->
+					<!--{if $i != 1}--><!--{/if}-->
+					<li><a href="{$portalcategory[$value['catid']]['caturl']}" class="fic15">$value[catname]</a></li>
+					<!--{eval $i--;}-->
+					<!--{/loop}-->
+				</ul>
+			</div>
+		</div>
+		<!--{/if}-->
+		<div class="drag">
+			<!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+		</div>
+	</div>
+		
+</div>
+
+<div class="wp mtn">
+	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+    		  	  		  	  		     	  			     		   		     		       	  		 	    		   		     		       	  		      		   		     		       	 	   	    		   		     		       	  	 	     		   		     		       	  	       		   		     		       	 	   	    		   		     		       	  	       		   		     		       	  	 		    		   		     		       	 	   	    		   		     		       	  		      		   		     		       	  		 	    		 	      	  		  	  		     	
+<!--{template common/footer}-->

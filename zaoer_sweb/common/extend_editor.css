@@ -1,0 +1,14 @@
+/*
+Editor CSS file for Discuz! X
+(C) Discuz Team.
+https://www.discuz.vip
+*/
+.edt { border: 1px solid; border-color: #E5E5E5; }
+
+
+/*
+	Name:			mod_editor_menu
+	Level:			Function
+	Explain:		编辑器弹层关闭按钮在 IE8 下有问题
+	Last Modify:	Pony
+*/
