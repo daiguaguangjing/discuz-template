@@ -1,14 +1,26 @@
 /*
-Editor CSS file for Discuz! X
-(C) Discuz Team.
-https://www.discuz.vip
+ * 文件：extend_editor.css
+ * 用途：针对 Discuz! 内置编辑器的补充/覆盖样式
+ *      (例如发帖时使用的编辑框)
 */
-.edt { border: 1px solid; border-color: #E5E5E5; }
 
+/* --------------------------------------
+   Editor CSS file for Discuz! X
+   (C) Discuz Team.
+   https://www.discuz.vip
+ -------------------------------------- */
+
+/* .edt：编辑器外层容器，设置了边框颜色与样式 */
+.edt {
+  border: 1px solid;
+  border-color: #E5E5E5;
+}
 
 /*
-	Name:			mod_editor_menu
-	Level:			Function
-	Explain:		编辑器弹层关闭按钮在 IE8 下有问题
-	Last Modify:	Pony
+ Name:      mod_editor_menu
+ Level:     Function
+ Explain:   编辑器弹层关闭按钮在 IE8 下有问题（历史注释）
+ Last Modify: Pony
+ 这里的注释说明了这个块主要解决编辑器弹层在低版本 IE 里的兼容性
+ （这里没有实际选择器，但留作说明）
 */
