@@ -1,208 +1,882 @@
-/* zaocommon */
-body, input, button, select, textarea {font:12px/1.5 -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif; }
-a:hover {text-decoration:none;}
-.bg0 {background:#FFF;}
-.p15 {padding:15px;}
-.pb10 {padding-bottom:10px;}
-.pb20 {padding-bottom:20px;}
-.pr10 {padding-right:10px;}
-.mt10 {margin-top:15px;}
-.mb10 {margin-bottom:20px;}
-.mb15 {margin-bottom:20px;}
-.zaobm {border-radius:5px;box-shadow:0 0 2px 0 rgba(0,0,0,.05);}
-.zaogrey {color:#AAA;}
-.zaoblue {color:#1680F8!important;}
-.zaoddd {color:#ddd;}
-.zhuti {color:{ZHUTI};}
-.zhutibg {background:{ZHUTI};}
-.bm_h {border-top:none;background:none;border-bottom:1px solid #F4F6F9;height:50px;line-height:50px;padding:0 15px;}
-.bm_h h2 {font-size:16px;}
-.bm_h .o img, .bm_h .o em {margin-top:17px;}
-.bm_c {padding:15px;}
-.bbda {border-bottom:1px dashed #F4F6F9;}
-.fic10 {font-size:10px;}
-.fic12 {font-size:12px;}
-.fic14 {font-size:14px;}
-.fic15 {font-size:15px;}
-.fic18 {font-size:18px;}
-.fic20 {font-size:20px;}
-.fic24 {font-size:24px;}
-.xg1, .xg1 a { color: #AAA !important; }
-.ct2 .sd {overflow:inherit;position:relative;}
+/* --------------------------------------
+ * 本文件：extend_common.css
+ * 作用：通用 CSS 扩展，用于为页面提供
+ *       常用的布局类、文字样式、配色
+ *       以及 Discuz! 常用结构的修饰。
+ * -------------------------------------- */
 
-/* pt */
-#pt {margin:15px 0;color:#bbb;}
-#pt .z a {color:#bbb;}
-#pt .z a:hover {color:{ZHUTI};}
-#pt .z em {color:#ddd;}
-.nvhm {color:#ddd!important;}
+/* 设置 body、input、button、select、textarea 的基础字体和行高，
+   这里使用了一套针对中英文字体的回退机制，以保证中英文均能较好显示。
+   font:12px/1.5 指的是 font-size:12px, line-height:1.5
+*/
+body, input, button, select, textarea {
+  font: 12px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC",
+  "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
+}
 
-/* scrolltop */
-#scrolltop {background:#FFF;border:none;box-shadow:0 2px 4px 0 rgba(114,144,179,.1);}
-#scrolltop a {border-top:1px solid #F5F5F5;color:#AAA;height:30px;line-height:30px;padding:5px;}
-#scrolltop a:hover {background:rgba(114,144,179,.05);border-radius:3px;color:{ZHUTI} !important;}
-#scrolltop a:hover:before {color:{ZHUTI};}
-#scrolltop a:before {line-height:30px;}
-#scrolltop a.replyfast:before {font-size:14px;}
-#scrolltop a.scrolltopa:before {font-size:18px;}
-#scrolltop a.returnlist:before, #scrolltop a.returnboard:before {font-size:18px;}
-#scrolltop span:nth-child(1) a {border-top:0 solid #F5F5F5;}
-.extstylehidden {display:none;position:absolute;background:#FFF;padding:10px;border-radius:5px;left:-98px;top:0;border: 1px solid #EFEFEF;color:#121212;}
-.extstyleshow:hover + .extstylehidden {display:block;}
+/* 禁止鼠标悬停链接时出现下划线 */
+a:hover {
+  text-decoration: none;
+}
 
-/* header */
-#toptb { background: #FFF; box-shadow: 0 2px 4px 0 rgba(114,144,179,.1); }
-#toptb a {  }
-#hd { background: #FFF; box-shadow: 0 2px 4px 0 rgba(114,144,179,.1); }
-#hd .wp { padding: 15px 0; }
-#nv { background: #FFF; line-height: 33px; opacity: 1 !important; border-radius: 5px; }
-#nv li { padding-right: 0; background: none; font-weight: 400; }
-#nv li a { color: #AAA; padding: 0 15px 0 0; }
-#nv li a:hover { background: #FFF; color: {ZHUTI}; }
-#nv li.hover a:hover, #nv li.hover a { background: #FFF; color: {ZHUTI}; }
-#nv li.a { background: #FFF; }
-#nv li.a a { color: {ZHUTI}; }
-#nv .nvy li a { padding: 0 0 0 15px; text-transform: capitalize; }
-#nv .switchwidth {color: #AAA; }
-#nv .switchwidth:hover { color: {ZHUTI}; }
-#nv .fico-search { margin-right: 5px; }
-#nv .fico-search:hover { color: {ZHUTI}; }
-#nv .nv_post { margin-right: 20px; }
-#nv .nv_post a { background: #F1F3F4; border-radius: 30px; padding: 5px 15px; border: 1px solid #EFEFEF; color: {ZHUTI}; }
-#nv .nv_post a:hover { opacity: .5; }
-#hd h2 { padding: 0; }
-#hd h2 img { height: 33px; }
-#qmenu { color: #AAA; font-size: 18px; margin: 0 0 0 15px; width: 27px; height: 33px; line-height: 33px; padding: 0; text-align: right; }
-#qmenu:hover { color:{ZHUTI}; }
-#qmenu_menu { margin-top: 0; }
-#qmenu::after { content: ""; border-top: none; border-right: none; border-bottom: none; border-left: none; }
-#qmenu.a::after { border-top: none; border-bottom: none; }
-#mu ul { margin-top: 10px; border-radius: 50px; background: #F1F3F4; border-bottom: none !important; }
+/* .bg0：一个通用的纯白背景工具类 */
+.bg0 {
+  background: #FFF;
+}
 
-.sub_nav .h_pop {background:#FFF;box-shadow:0 4px 16px 0 rgb(0 0 0 / 20%);width:auto;padding:10px 15px;margin:12px 0 0 0;border:0;border-top:0;border-radius:5px;min-width:90px;}
-.sub_nav .h_pop::before {content:" ";display:block;background-color:#FFF;width:10.64px;height:10.64px;position:absolute;top:-5px;left:10px;border-radius:1.5px;border-color:#EFEFEF transparent transparent #EFEFEF;border-style:solid;border-width:1px;-webkit-transform:rotate(45deg);transform:rotate(45deg);}
-.sub_nav .h_pop li {width:105px;text-align:left;overflow:hidden;}
-.sub_nav .h_pop li a {display:block;padding:0;height:30px;color:#333;line-height:30px;font-size:14px;width:auto;text-align:left;border-bottom:0;}
-.sub_nav .h_pop li a:hover {color:{ZHUTI};background:none;}
-.sub_nav .h_pop li:last-child a {border-bottom:0;}
-.zaomanage .p_pop {background:#FFF;box-shadow:0 4px 16px 0 rgb(0 0 0 / 20%);width:auto;padding:10px 15px;margin:12px 0 0 0;border:0;border-top:0;border-radius:5px;min-width:90px;}
-.zaomanage .p_pop::before {content:" ";display:block;background-color:#FFF;width:10.64px;height:10.64px;position:absolute;top:-5px;left:25px;border-radius:1.5px;border-color:#EFEFEF transparent transparent #EFEFEF;border-style:solid;border-width:1px;-webkit-transform:rotate(45deg);transform:rotate(45deg);}
-.zaomanage .p_pop li {width:105px;text-align:left;overflow:hidden;}
-.zaomanage .p_pop li a {display:block;padding:0;height:30px;color:#333;line-height:30px;font-size:14px;width:auto;text-align:left;border-bottom:0;}
-.zaomanage .p_pop li a:hover {color:{ZHUTI};background:none;}
-.zaomanage .p_pop li:last-child a {border-bottom:0;}
+/* .p15：上下左右均为 15px 的内边距 */
+.p15 {
+  padding: 15px;
+}
 
-.prompt_news,.prompt_follower,.prompt_news_0,.prompt_follower_0,.ignore_notice,.prompt_concern {width:14px;height:14px;line-height:22px;font-size:14px;color:{ZHUTI};}
-.notice_pm, .notice_all, .notice_mypost, .notice_interactive, .notice_system, .notice_manage, .notice_app {width:14px;height:14px;line-height:22px;font-size:12px;color:{ZHUTI};}
-.ignore_notice {line-height:14px;}
+/* .pb10：底部内边距 10px；.pb20：底部内边距 20px；.pr10：右边内边距 10px；
+   .mt10：顶部外边距 15px；.mb10/.mb15：底部外边距 20px */
+.pb10 { padding-bottom: 10px; }
+.pb20 { padding-bottom: 20px; }
+.pr10 { padding-right: 10px; }
+.mt10 { margin-top: 15px; }
+.mb10 { margin-bottom: 20px; }
+.mb15 { margin-bottom: 20px; }
 
-/* home */
-.ct2_a, .ct3_a {border-radius:5px;border:none;}
-.ct2 .mn {width:960px;}
-.tbn li.a {border-bottom-style:dashed;}
-.tb {border-bottom:1px solid #DDD;}
-.tb a {border:1px solid #DDD;background:#E5E5E5; }
-.mi .avatar img {width:120px;}
-.flw_avt img {border-radius:50%;}
-.avt img {border-radius:50%;}
-.sl .h {border-bottom:none!important;}
+/* .zaobm：圆角 + 轻微阴影，常用来做卡片样式或突出显示 */
+.zaobm {
+  border-radius: 5px;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,.05);
+}
 
-/* login register */
-.zao_lo_info { width: 520px; margin: 40px auto; border: 1px solid #EFEFEF; border-radius: 5px; box-shadow: 0 0 2px 0 rgb(98 124 153 / .1); }
-.zao_lo_info .lo_title { font-size: 18px; font-weight: 700; text-align: center; padding: 20px; }
-.zao_lo_form { padding: 10px 110px 20px; }
-.zao_lo_refm { margin-bottom: 20px; }
-.zao_lo_refm .zao_input { width: 100%; height: 42px; line-height: 42px; padding: 0 12px; font-size: 12px; color: #444; border: 1px solid rgba(0,0,0,.05); background: rgba(0,0,0,.02); border-radius: 2px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-.zao_lo_refm .zao_input::-webkit-input-placeholder { color: #9C9C9C; text-indent: 0; }
-.zao_lo_refm .zao_input:focus { border: 1px solid rgba(0,0,0,.05); outline: none; }
-.zao_lo_refm .question_select { border: 1px solid rgba(0,0,0,.05); background: #FFF; padding: 0 8px; height: 42px; width: 100%; border-radius: 2px; cursor: pointer; }
-.zao_lo_refm .zaopn { width: 100%; height: 40px; text-align: center; border-radius: 5px; border: 1px solid {ZHUTI}; background: {ZHUTI}; color: #FFF; vertical-align: middle; overflow: hidden; }
-.zao_lo_refm .zaopn:hover { background: {ZHUTI}; opacity: .5; }
-.zao_lo_refm .diy {  }
-.zao_lo_refm .diy .px { width: 100%; height: 42px; line-height: 42px; padding: 0 12px; font-size: 12px; color: #444; border: 1px solid rgba(0,0,0,.05); background: rgba(0,0,0,.02); border-radius: 2px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-.zao_lo_refm .diy .px::-webkit-input-placeholder { color: #9C9C9C; text-indent: 0; }
-.zao_lo_refm .diy .px:focus { border: 1px solid rgba(0,0,0,.05); outline: none; }
-.zao_lo_refm .diy .pt { -webkit-appearance: none; width: 100%; border: 1px solid rgba(0,0,0,.05); box-sizing: border-box; padding: 10px 12px; border-radius: 2px; background: rgba(0,0,0,.02); }
-.zao_lo_refm .diy .pt::-webkit-input-placeholder { color: #9C9C9C; text-indent: 0; }
-.zao_lo_refm .diy .pt:focus { border: 1px solid rgba(0,0,0,.05); outline: none; }
-.zao_lo_refm .diy select { appearance: none; -webkit-appearance: none; -moz-appearance: none; min-height: 38px; width: 100%; border: 1px solid #EFEFEF; background: #FFF; border-radius: 4px; padding: 0 10px; }
-.zao_lo_refm .diy select option { height: 25px; padding-top: 5px; }
-.zao_lo_refm .diy .lb { margin-right: 10px; }
-.zao_lo_seccheck { margin-bottom: 20px; }
-.zao_lo_seccheck .px { margin: 5px 10px; height: 42px; line-height: 42px; padding: 0 10px; font-size: 12px; border: 1px solid rgba(0,0,0,.05); background: rgba(0,0,0,.02); border-radius: 2px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-.zao_lo_seccheck .px::-webkit-input-placeholder { color: #9C9C9C; text-indent: 0; }
-.zao_lo_seccheck .px:focus { border: 1px solid rgba(0,0,0,.05); outline: none; }
-.zao_lo_seccheck img { border-radius: 2px; }
-.zao_lo_seccheck img:first-child { height: 12px; width: 12px; margin-left: 5px; }
-.re_lostpw a { margin: 0 5px; }
-.p_right .p_tip { padding-left: 20px; padding-top: 5px; }
+/* .zaogrey：字体变为 #AAA；.zaoblue：字体颜色强制为 #1680F8 */
+.zaogrey {
+  color: #AAA;
+}
+.zaoblue {
+  color: #1680F8 !important;
+}
 
-/* login register baoqian nin suozai de yonghuzu */
-.nfl .f_c { border: none; border-radius: 5px;}
+/* .zaoddd：字体颜色 #ddd */
+.zaoddd {
+  color: #ddd;
+}
 
+/* .zhuti / .zhutibg:
+   这里的 {ZHUTI} 是占位符，Discuz! 模板里会根据主题配色自动替换成实际颜色。 */
+.zhuti {
+  color: {ZHUTI};
+}
+.zhutibg {
+  background: {ZHUTI};
+}
 
-/* btn */
-.pgsbtn {background:{ZHUTI};}
-.pgsbtn:hover {background:{ZHUTI};}
-.pnc, a.pnc {border-color:{ZHUTI};background-color:{ZHUTI};}
+/* .bm_h：论坛块模块的头部，一般高度 50px, 下边框 1px，内边距等 */
+.bm_h {
+  border-top: none;
+  background: none;
+  border-bottom: 1px solid #F4F6F9;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+}
+.bm_h h2 {
+  font-size: 16px;
+}
+.bm_h .o img,
+.bm_h .o em {
+  margin-top: 17px;
+}
 
-/* footer */
-#ft {padding:50px 0;}
-#flk p {color:#AAA;}
-#flk .pipe {color:#DDD;}
-#flk a {color:#AAA;}
-#flk a:hover {color:#121212;}
-#frt p {color:#AAA;}
-#frt a {color:#AAA;}
-#frt a:hover {color:#121212;}
+/* .bm_c：论坛块内容区，常用内边距 15px */
+.bm_c {
+  padding: 15px;
+}
 
-/* tanchuang */
-.fwinmask .fwin {box-shadow:0 0 8px rgba(0,0,0,.25);border-radius:5px;}
-.t_l, .t_c, .t_r, .m_l, .m_r, .b_l, .b_c, .b_r {background:#FFF;opacity:1;}
-.m_c .o { background:#FFF; border-top:1px solid #F4F6F9; }
-.m_c .fsb { background: none; border-top: none; }
+/* .bbda：一个常见的底部分割线样式，使用虚线 */
+.bbda {
+  border-bottom: 1px dashed #F4F6F9;
+}
 
-/* portal-list */
-.zaoxld .atc {float:right;margin-left:20px;}
-.zaoxld .atc img {width:300px;height:150px;border-radius:5px;object-fit:cover; -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); -webkit-transition: -webkit-transform 0.5s; -moz-transition: -moz-transform 0.5s; -ms-transition: -moz-transform 0.5s; transition: transform 0.5s; }
-.zaoxld .atc img:hover { -webkit-transform: scale(1.03); -moz-transform: scale(1.03); -ms-transform: scale(1.03); transform: scale(1.03); }
-.zaoxld h1:hover {color:{ZHUTI};}
+/* ficXX：快速设置 font-size，数字即为字号 */
+.fic10 { font-size: 10px; }
+.fic12 { font-size: 12px; }
+.fic14 { font-size: 14px; }
+.fic15 { font-size: 15px; }
+.fic18 { font-size: 18px; }
+.fic20 { font-size: 20px; }
+.fic24 { font-size: 24px; }
 
-/* edit */
-.tedt { border-color: #E5E5E5; }
-.ftid a { border-color: #E5E5E5; }
-.px, .pt, .ps, select { border-color: #E5E5E5; }
+/* xg1：通常指一些提示/辅助文字，设置颜色更浅
+   !important 确保不会被其他样式覆盖 */
+.xg1, .xg1 a {
+  color: #AAA !important;
+}
 
-/* discuz diy */
-#sweb_mn_banner { position: relative; }
-.sweb_mn_banner { width: 100%; height: 330px; border-radius: 5px; }
-.sweb_mn_banner img { width: 100%; border-radius: 5px; -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); -webkit-transition: -webkit-transform 0.5s; -moz-transition: -moz-transform 0.5s; -ms-transition: -moz-transform 0.5s; transition: transform 0.5s; }
-.sweb_mn_banner img:hover { -webkit-transform: scale(1.03); -moz-transform: scale(1.03); -ms-transform: scale(1.03); transform: scale(1.03); }
-.sweb_mn_banner .swiper-pagination-bullet { background: #FFF; opacity: .8; width: 10px; height: 10px; }
-.sweb_mn_banner .swiper-pagination-bullet-active-main { opacity: 1; }
-.sweb_mn_banner .swiper-pagination { bottom: 10px !important; }
-.sweb_sd_tit { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
-.sweb_sd_tit i { margin-right: 8px; }
-.sweb_sd_one li { height: 30px; line-height: 30px; font-size: 14px; overflow: hidden; }
-.sweb_sd_one li a:hover { color: {ZHUTI}; }
-.sweb_sd_one li em { margin-top: 6px; margin-right: 8px; font-size: 0.7rem; width: 14px; height: 14px; line-height: 14px; text-align: center; border: 2px solid #AAB2BD; border-radius: 50%; color: #AAB2BD; }
-.sweb_sd_one li:first-child em, #sd_one li:nth-child(2) em, #sd_one li:nth-child(3) em { border: 2px solid #F26C4F; color: #F26C4F; }
-.sweb_sd_two .post { font-size: 14px; display: block; color: #FFF; padding: 10px 0; text-align: center; border-radius: 4px; }
-.sweb_sd_two .post:hover { opacity: 0.8; }
-.sweb_sd_two .zaosign { font-size: 14px; display: block; color: #FFF; padding: 10px 0; text-align: center; border-radius: 4px; margin-top: 10px; }
-.sweb_sd_two .zaosign:hover { opacity: 0.8; }
-.sweb_sd_three li { height: 30px; line-height: 30px; font-size: 14px; overflow: hidden; }
-.sweb_sd_three li a:hover { color: {ZHUTI}; }
-.sweb_sd_three li em { margin-top: 6px; margin-right: 8px; font-size: 0.7rem; width: 14px; height: 14px; line-height: 14px; text-align: center; border: 2px solid #AAB2BD; border-radius: 50%; color: #AAB2BD; }
-.sweb_sd_three li:first-child em, #sd_three li:nth-child(2) em, #sd_three li:nth-child(3) em { border: 2px solid #F26C4F; color: #F26C4F; }
-#sweb_sd_four img { border-radius: 4px; -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); -webkit-transition: -webkit-transform 0.4s; -moz-transition: -moz-transform 0.4s; -ms-transition: -moz-transform 0.4s; transition: transform 0.4s; }
-#sweb_sd_four img:hover { -webkit-transform: scale(1.03); -moz-transform: scale(1.03); -ms-transform: scale(1.03); transform: scale(1.03); }
-.sweb_sd_five li { width: 100%; height: 34px; line-height: 34px; overflow: hidden; }
-.sweb_sd_five li em { float: right; height: 20px; line-height: 20px; padding: 2px 8px; margin-top: 5px; background: #F5F5F5; color: #AAA; border-radius: 12px; overflow: hidden; font-size: 10px; }
-.sweb_sd_five li em:hover { color: #FFF; background: {ZHUTI}; }
-.sweb_sd_five li span { float: left; width: 24px; line-height: 34px; display: inline-block; color: #AAA; font-size: 14px; font-weight: 700; }
-.sweb_sd_five li img { float: left; margin-top: 6px; border-radius: 50%; }
-.sweb_sd_five li a { float: left; height: 34px; line-height: 34px; margin-left: 5px; display: inline-block; overflow: hidden; }
-.sweb_sd_five li:first-child span, #sd_four li:nth-child(2) span, #sd_four li:nth-child(3) span { color: #F26C4F; }
-#sweb_sd_six img { border-radius: 4px; -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); -webkit-transition: -webkit-transform 0.4s; -moz-transition: -moz-transform 0.4s; -ms-transition: -moz-transform 0.4s; transition: transform 0.4s; }
-#sweb_sd_six img:hover { -webkit-transform: scale(1.03); -moz-transform: scale(1.03); -ms-transform: scale(1.03); transform: scale(1.03); }
+/* .ct2 .sd：溢出行为设置为 inherit，并且让 position: relative，
+   可能用于某些侧边栏悬浮效果 */
+.ct2 .sd {
+  overflow: inherit;
+  position: relative;
+}
+
+/* #pt：面包屑导航区，margin:15px 上下，文字颜色 #bbb */
+#pt {
+  margin: 15px 0;
+  color: #bbb;
+}
+#pt .z a {
+  color: #bbb;
+}
+#pt .z a:hover {
+  color: {ZHUTI};
+}
+#pt .z em {
+  color: #ddd;
+}
+.nvhm {
+  color: #ddd !important;
+}
+
+/* #scrolltop：返回顶部等功能区，设置了白色背景与阴影 */
+#scrolltop {
+  background: #FFF;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(114,144,179,.1);
+}
+#scrolltop a {
+  border-top: 1px solid #F5F5F5;
+  color: #AAA;
+  height: 30px;
+  line-height: 30px;
+  padding: 5px;
+}
+#scrolltop a:hover {
+  background: rgba(114,144,179,.05);
+  border-radius: 3px;
+  color: {ZHUTI} !important;
+}
+#scrolltop a:hover:before {
+  color: {ZHUTI};
+}
+#scrolltop a:before {
+  line-height: 30px;
+}
+#scrolltop a.replyfast:before { font-size: 14px; }
+#scrolltop a.scrolltopa:before { font-size: 18px; }
+#scrolltop a.returnlist:before, #scrolltop a.returnboard:before {
+  font-size: 18px;
+}
+#scrolltop span:nth-child(1) a {
+  border-top: 0 solid #F5F5F5;
+}
+.extstylehidden {
+  display: none;
+  position: absolute;
+  background: #FFF;
+  padding: 10px;
+  border-radius: 5px;
+  left: -98px;
+  top: 0;
+  border: 1px solid #EFEFEF;
+  color: #121212;
+}
+.extstyleshow:hover + .extstylehidden {
+  display: block;
+}
+
+/* #toptb、#hd：论坛顶栏与头部区域，白色背景并带轻微阴影 */
+#toptb {
+  background: #FFF;
+  box-shadow: 0 2px 4px 0 rgba(114,144,179,.1);
+}
+#toptb a {}
+#hd {
+  background: #FFF;
+  box-shadow: 0 2px 4px 0 rgba(114,144,179,.1);
+}
+#hd .wp {
+  padding: 15px 0;
+}
+
+/* #nv：导航条，设置为白色背景，行高 33px，圆角等 */
+#nv {
+  background: #FFF;
+  line-height: 33px;
+  opacity: 1 !important;
+  border-radius: 5px;
+}
+#nv li {
+  padding-right: 0;
+  background: none;
+  font-weight: 400;
+}
+#nv li a {
+  color: #AAA;
+  padding: 0 15px 0 0;
+}
+#nv li a:hover {
+  background: #FFF;
+  color: {ZHUTI};
+}
+#nv li.hover a:hover,
+#nv li.hover a {
+  background: #FFF;
+  color: {ZHUTI};
+}
+#nv li.a {
+  background: #FFF;
+}
+#nv li.a a {
+  color: {ZHUTI};
+}
+#nv .nvy li a {
+  padding: 0 0 0 15px;
+  text-transform: capitalize;
+}
+#nv .switchwidth {
+  color: #AAA;
+}
+#nv .switchwidth:hover {
+  color: {ZHUTI};
+}
+#nv .fico-search {
+  margin-right: 5px;
+}
+#nv .fico-search:hover {
+  color: {ZHUTI};
+}
+#nv .nv_post {
+  margin-right: 20px;
+}
+#nv .nv_post a {
+  background: #F1F3F4;
+  border-radius: 30px;
+  padding: 5px 15px;
+  border: 1px solid #EFEFEF;
+  color: {ZHUTI};
+}
+#nv .nv_post a:hover {
+  opacity: .5;
+}
+#hd h2 {
+  padding: 0;
+}
+#hd h2 img {
+  height: 33px;
+}
+#qmenu {
+  color: #AAA;
+  font-size: 18px;
+  margin: 0 0 0 15px;
+  width: 27px;
+  height: 33px;
+  line-height: 33px;
+  padding: 0;
+  text-align: right;
+}
+#qmenu:hover {
+  color: {ZHUTI};
+}
+#qmenu_menu {
+  margin-top: 0;
+}
+#qmenu::after {
+  content: "";
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+}
+#qmenu.a::after {
+  border-top: none;
+  border-bottom: none;
+}
+#mu ul {
+  margin-top: 10px;
+  border-radius: 50px;
+  background: #F1F3F4;
+  border-bottom: none !important;
+}
+
+/* .sub_nav、.zaomanage：子菜单和管理下拉弹窗，带阴影、圆角，伪元素做小三角 */
+.sub_nav .h_pop {
+  background: #FFF;
+  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 20%);
+  width: auto;
+  padding: 10px 15px;
+  margin: 12px 0 0 0;
+  border: 0;
+  border-top: 0;
+  border-radius: 5px;
+  min-width: 90px;
+}
+.sub_nav .h_pop::before {
+  content: " ";
+  display: block;
+  background-color: #FFF;
+  width: 10.64px;
+  height: 10.64px;
+  position: absolute;
+  top: -5px;
+  left: 10px;
+  border-radius: 1.5px;
+  border-color: #EFEFEF transparent transparent #EFEFEF;
+  border-style: solid;
+  border-width: 1px;
+  transform: rotate(45deg);
+}
+.sub_nav .h_pop li {
+  width: 105px;
+  text-align: left;
+  overflow: hidden;
+}
+.sub_nav .h_pop li a {
+  display: block;
+  padding: 0;
+  height: 30px;
+  color: #333;
+  line-height: 30px;
+  font-size: 14px;
+  width: auto;
+  text-align: left;
+  border-bottom: 0;
+}
+.sub_nav .h_pop li a:hover {
+  color: {ZHUTI};
+  background: none;
+}
+.sub_nav .h_pop li:last-child a {
+  border-bottom: 0;
+}
+
+/* .zaomanage 的 .p_pop 类似弹窗，下拉菜单样式 */
+.zaomanage .p_pop {
+  background: #FFF;
+  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 20%);
+  width: auto;
+  padding: 10px 15px;
+  margin: 12px 0 0 0;
+  border: 0;
+  border-top: 0;
+  border-radius: 5px;
+  min-width: 90px;
+}
+.zaomanage .p_pop::before {
+  content: " ";
+  display: block;
+  background-color: #FFF;
+  width: 10.64px;
+  height: 10.64px;
+  position: absolute;
+  top: -5px;
+  left: 25px;
+  border-radius: 1.5px;
+  border-color: #EFEFEF transparent transparent #EFEFEF;
+  border-style: solid;
+  border-width: 1px;
+  transform: rotate(45deg);
+}
+.zaomanage .p_pop li {
+  width: 105px;
+  text-align: left;
+  overflow: hidden;
+}
+.zaomanage .p_pop li a {
+  display: block;
+  padding: 0;
+  height: 30px;
+  color: #333;
+  line-height: 30px;
+  font-size: 14px;
+  width: auto;
+  text-align: left;
+  border-bottom: 0;
+}
+.zaomanage .p_pop li a:hover {
+  color: {ZHUTI};
+  background: none;
+}
+.zaomanage .p_pop li:last-child a {
+  border-bottom: 0;
+}
+
+/* 提醒数字、消息图标等，使用了字符图标大小 14px、12px，
+   并以 {ZHUTI} 颜色来突出 */
+.prompt_news, .prompt_follower,
+.prompt_news_0, .prompt_follower_0,
+.ignore_notice, .prompt_concern {
+  width: 14px;
+  height: 14px;
+  line-height: 22px;
+  font-size: 14px;
+  color: {ZHUTI};
+}
+.notice_pm, .notice_all, .notice_mypost,
+.notice_interactive, .notice_system,
+.notice_manage, .notice_app {
+  width: 14px;
+  height: 14px;
+  line-height: 22px;
+  font-size: 12px;
+  color: {ZHUTI};
+}
+.ignore_notice {
+  line-height: 14px;
+}
+
+/* .ct2_a, .ct3_a：内容区带圆角、去掉默认边框 */
+.ct2_a, .ct3_a {
+  border-radius: 5px;
+  border: none;
+}
+.ct2 .mn {
+  width: 960px;
+}
+.tbn li.a {
+  border-bottom-style: dashed;
+}
+.tb {
+  border-bottom: 1px solid #DDD;
+}
+.tb a {
+  border: 1px solid #DDD;
+  background: #E5E5E5;
+}
+.mi .avatar img {
+  width: 120px;
+}
+.flw_avt img, .avt img {
+  border-radius: 50%;
+}
+.sl .h {
+  border-bottom: none !important;
+}
+
+/* 登录/注册相关表单样式 */
+.zao_lo_info {
+  width: 520px;
+  margin: 40px auto;
+  border: 1px solid #EFEFEF;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 0 rgb(98 124 153 / .1);
+}
+.zao_lo_info .lo_title {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+}
+.zao_lo_form {
+  padding: 10px 110px 20px;
+}
+/* .zao_lo_refm：每个表单行的外层 */
+.zao_lo_refm {
+  margin-bottom: 20px;
+}
+/* .zao_input：通用输入框样式，设置高度、内边距、圆角、背景等 */
+.zao_lo_refm .zao_input {
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 12px;
+  font-size: 12px;
+  color: #444;
+  border: 1px solid rgba(0,0,0,.05);
+  background: rgba(0,0,0,.02);
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.zao_lo_refm .zao_input::-webkit-input-placeholder {
+  color: #9C9C9C;
+}
+.zao_lo_refm .zao_input:focus {
+  border: 1px solid rgba(0,0,0,.05);
+  outline: none;
+}
+.zao_lo_refm .question_select {
+  border: 1px solid rgba(0,0,0,.05);
+  background: #FFF;
+  padding: 0 8px;
+  height: 42px;
+  width: 100%;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.zao_lo_refm .zaopn {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid {ZHUTI};
+  background: {ZHUTI};
+  color: #FFF;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.zao_lo_refm .zaopn:hover {
+  background: {ZHUTI};
+  opacity: .5;
+}
+.zao_lo_refm .diy {}
+.zao_lo_refm .diy .px {
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 12px;
+  font-size: 12px;
+  color: #444;
+  border: 1px solid rgba(0,0,0,.05);
+  background: rgba(0,0,0,.02);
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.zao_lo_refm .diy .px::-webkit-input-placeholder {
+  color: #9C9C9C;
+}
+.zao_lo_refm .diy .px:focus {
+  border: 1px solid rgba(0,0,0,.05);
+  outline: none;
+}
+.zao_lo_refm .diy .pt {
+  -webkit-appearance: none;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,.05);
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 2px;
+  background: rgba(0,0,0,.02);
+}
+.zao_lo_refm .diy .pt::-webkit-input-placeholder {
+  color: #9C9C9C;
+}
+.zao_lo_refm .diy .pt:focus {
+  border: 1px solid rgba(0,0,0,.05);
+  outline: none;
+}
+.zao_lo_refm .diy select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  min-height: 38px;
+  width: 100%;
+  border: 1px solid #EFEFEF;
+  background: #FFF;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+.zao_lo_refm .diy select option {
+  height: 25px;
+  padding-top: 5px;
+}
+.zao_lo_refm .diy .lb {
+  margin-right: 10px;
+}
+.zao_lo_seccheck {
+  margin-bottom: 20px;
+}
+.zao_lo_seccheck .px {
+  margin: 5px 10px;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 10px;
+  font-size: 12px;
+  border: 1px solid rgba(0,0,0,.05);
+  background: rgba(0,0,0,.02);
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.zao_lo_seccheck .px::-webkit-input-placeholder {
+  color: #9C9C9C;
+}
+.zao_lo_seccheck .px:focus {
+  border: 1px solid rgba(0,0,0,.05);
+  outline: none;
+}
+.zao_lo_seccheck img {
+  border-radius: 2px;
+}
+.zao_lo_seccheck img:first-child {
+  height: 12px;
+  width: 12px;
+  margin-left: 5px;
+}
+.re_lostpw a {
+  margin: 0 5px;
+}
+.p_right .p_tip {
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+/* .nfl .f_c：一些弹窗或者提示框的样式，去边框加圆角 */
+.nfl .f_c {
+  border: none;
+  border-radius: 5px;
+}
+
+/* .pgsbtn, .pnc：一些按钮样式，背景使用 {ZHUTI} 并在 hover 时保持相同色 */
+.pgsbtn {
+  background: {ZHUTI};
+}
+.pgsbtn:hover {
+  background: {ZHUTI};
+}
+.pnc, a.pnc {
+  border-color: {ZHUTI};
+  background-color: {ZHUTI};
+}
+
+/* 页脚区域：较大内边距 + 浅色文字。 */
+#ft {
+  padding: 50px 0;
+}
+#flk p {
+  color: #AAA;
+}
+#flk .pipe {
+  color: #DDD;
+}
+#flk a {
+  color: #AAA;
+}
+#flk a:hover {
+  color: #121212;
+}
+#frt p {
+  color: #AAA;
+}
+#frt a {
+  color: #AAA;
+}
+#frt a:hover {
+  color: #121212;
+}
+
+/* .fwinmask .fwin：Discuz! 弹窗外层。这里设置了阴影和圆角 */
+.fwinmask .fwin {
+  box-shadow: 0 0 8px rgba(0,0,0,.25);
+  border-radius: 5px;
+}
+/* .t_l... .b_r：这些是 Discuz! 传统模板的弹窗九宫格背景切分 */
+.t_l, .t_c, .t_r, .m_l, .m_r, .b_l, .b_c, .b_r {
+  background: #FFF;
+  opacity: 1;
+}
+.m_c .o {
+  background: #FFF;
+  border-top: 1px solid #F4F6F9;
+}
+.m_c .fsb {
+  background: none;
+  border-top: none;
+}
+
+/* portal-list 样式：门户文章列表 */
+.zaoxld .atc {
+  float: right;
+  margin-left: 20px;
+}
+.zaoxld .atc img {
+  width: 300px;
+  height: 150px;
+  border-radius: 5px;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+.zaoxld .atc img:hover {
+  transform: scale(1.03);
+}
+.zaoxld h1:hover {
+  color: {ZHUTI};
+}
+
+/* edit/发帖编辑区域 */
+.tedt {
+  border-color: #E5E5E5;
+}
+.ftid a {
+  border-color: #E5E5E5;
+}
+.px, .pt, .ps, select {
+  border-color: #E5E5E5;
+}
+
+/* discuz diy（门户DIY） */
+#sweb_mn_banner {
+  position: relative;
+}
+.sweb_mn_banner {
+  width: 100%;
+  height: 330px;
+  border-radius: 5px;
+}
+.sweb_mn_banner img {
+  width: 100%;
+  border-radius: 5px;
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+.sweb_mn_banner img:hover {
+  transform: scale(1.03);
+}
+.sweb_mn_banner .swiper-pagination-bullet {
+  background: #FFF;
+  opacity: .8;
+  width: 10px;
+  height: 10px;
+}
+.sweb_mn_banner .swiper-pagination-bullet-active-main {
+  opacity: 1;
+}
+.sweb_mn_banner .swiper-pagination {
+  bottom: 10px !important;
+}
+.sweb_sd_tit {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.sweb_sd_tit i {
+  margin-right: 8px;
+}
+/* sweb_sd_one, sweb_sd_two, ... 
+   都是门户侧边模块的列表、图文块、热门排行等，各自设置高度、hover 等 */
+.sweb_sd_one li {
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  overflow: hidden;
+}
+.sweb_sd_one li a:hover {
+  color: {ZHUTI};
+}
+.sweb_sd_one li em {
+  margin-top: 6px;
+  margin-right: 8px;
+  font-size: 0.7rem;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  text-align: center;
+  border: 2px solid #AAB2BD;
+  border-radius: 50%;
+  color: #AAB2BD;
+}
+.sweb_sd_one li:first-child em,
+#sd_one li:nth-child(2) em,
+#sd_one li:nth-child(3) em {
+  border: 2px solid #F26C4F;
+  color: #F26C4F;
+}
+.sweb_sd_two .post {
+  font-size: 14px;
+  display: block;
+  color: #FFF;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 4px;
+}
+.sweb_sd_two .post:hover {
+  opacity: 0.8;
+}
+.sweb_sd_two .zaosign {
+  font-size: 14px;
+  display: block;
+  color: #FFF;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+.sweb_sd_two .zaosign:hover {
+  opacity: 0.8;
+}
+.sweb_sd_three li {
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  overflow: hidden;
+}
+.sweb_sd_three li a:hover {
+  color: {ZHUTI};
+}
+.sweb_sd_three li em {
+  margin-top: 6px;
+  margin-right: 8px;
+  font-size: 0.7rem;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  text-align: center;
+  border: 2px solid #AAB2BD;
+  border-radius: 50%;
+  color: #AAB2BD;
+}
+.sweb_sd_three li:first-child em,
+#sd_three li:nth-child(2) em,
+#sd_three li:nth-child(3) em {
+  border: 2px solid #F26C4F;
+  color: #F26C4F;
+}
+#sweb_sd_four img {
+  border-radius: 4px;
+  transform: scale(1);
+  transition: transform 0.4s;
+}
+#sweb_sd_four img:hover {
+  transform: scale(1.03);
+}
+.sweb_sd_five li {
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+  overflow: hidden;
+}
+.sweb_sd_five li em {
+  float: right;
+  height: 20px;
+  line-height: 20px;
+  padding: 2px 8px;
+  margin-top: 5px;
+  background: #F5F5F5;
+  color: #AAA;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 10px;
+}
+.sweb_sd_five li em:hover {
+  color: #FFF;
+  background: {ZHUTI};
+}
+.sweb_sd_five li span {
+  float: left;
+  width: 24px;
+  line-height: 34px;
+  display: inline-block;
+  color: #AAA;
+  font-size: 14px;
+  font-weight: 700;
+}
+.sweb_sd_five li img {
+  float: left;
+  margin-top: 6px;
+  border-radius: 50%;
+}
+.sweb_sd_five li a {
+  float: left;
+  height: 34px;
+  line-height: 34px;
+  margin-left: 5px;
+  display: inline-block;
+  overflow: hidden;
+}
+.sweb_sd_five li:first-child span,
+#sd_four li:nth-child(2) span,
+#sd_four li:nth-child(3) span {
+  color: #F26C4F;
+}
+#sweb_sd_six img {
+  border-radius: 4px;
+  transform: scale(1);
+  transition: transform 0.4s;
+}
+#sweb_sd_six img:hover {
+  transform: scale(1.03);
+}
